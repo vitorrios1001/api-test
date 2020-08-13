@@ -25,5 +25,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm i
+    - name: Deploy NodeJS app
+      uses: appleboy/ssh-action@v0.1.2
       with:
-        script: pm2 restart index
+        script: |
+          pm2 restart index
