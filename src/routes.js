@@ -6,6 +6,10 @@ routes.get('/', (req, res) => {
   res.status(200).json({ status: 'Online api of test' })
 })
 
+routes.get('/version', (req, res) => {
+  res.status(200).json({ version: '0.0.1' })
+})
+
 routes.get('/api/:id', (req, res) => {
   try {
     const { id } = req.params
