@@ -7,7 +7,7 @@ routes.get('/', (req, res) => {
 })
 
 routes.get('/version', (req, res) => {
-  res.status(200).json({ version: '0.0.6' })
+  res.status(200).json({ version: '0.0.7' })
 })
 
 routes.get('/api/:id', (req, res) => {
