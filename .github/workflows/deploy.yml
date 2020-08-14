@@ -18,11 +18,12 @@ jobs:
     - name: Deploy NodeJS app
       uses: appleboy/ssh-action@v0.1.2
       with:
+        key: ${{ secrets.SSH_KEY }}
         host: ${{secrets.SSH_HOST}}
         username: ${{ secrets.SSH_USERNAME }}
         port: ${{ secrets.SSH_PORT }}
         script: |
-          cd repos/vitor/api-test
+          cd ~/repos/vitor/api-test
           git pull
           npm install
           pm2 restart index
